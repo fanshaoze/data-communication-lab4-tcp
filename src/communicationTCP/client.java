@@ -14,12 +14,12 @@ public class client {
 			try {
 				Socket clientSocket = new Socket(s_address,Port);
 				//clientSocket.setSoTimeout(3000);
-				String message = "hello i am client"+"\0";
+				String message = "hello i am client \n";
 				clientSocket.getOutputStream().write(message.getBytes());
 				DataOutputStream dos = new DataOutputStream(clientSocket.getOutputStream());
 				
 				System.out.println(message);
-				//dos.flush();
+				dos.flush();
 				//System.out.println(Port);
 				System.out.println("Send messageAAAAAAAAAAAAAAAa");
 				

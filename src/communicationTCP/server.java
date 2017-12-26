@@ -12,17 +12,16 @@ public class server {
 
 	public void Server() {
 		getPort(Port);
-		System.out.println("Server Message:Bind port success,the port is " + Port + ".");
+		System.out.println("the port is " + Port);
 		Socket s_package = new Socket();
 		try {
 			while (true) {
 				s_package = aSocket.accept();
 				//System.out.println("Server Message:Bind port success,the port is " + Port + ".");
-				System.out.println("Server Message:Listening Client request,Client ip is " + s_package.getInetAddress().getHostAddress() + ","
-						+ " port is + " + s_package.getPort());
+				System.out.println("ip:" + s_package.getInetAddress().getHostAddress() + " "+ " port:" + s_package.getPort());
 
 				DataInputStream dis = new DataInputStream(s_package.getInputStream());				
-				String message = dis.readUTF();		
+				String message = dis.readLine();		
 				System.out.println(":" + message + ".");
 				String backmess = message.toUpperCase();
 				
